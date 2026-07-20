@@ -17,25 +17,40 @@
       html,
       body {
         width: 100%;
-        height: 100%;
+        height: 100lvh;
         margin: 0;
         padding: 0;
         overflow: hidden;
+        background: #172342;
       }
 
-      html {
-        background-color: #b31414;
-        background-image: url("images/background.png");
-        background-repeat: repeat;
-        background-position: 0 0;
-        background-size: 100% 100%;
+      .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100vw;
+        height: 100lvh;
+        object-fit: fill;
+        pointer-events: none;
+        user-select: none;
       }
 
-      body {
-        background: transparent;
+      .content {
+        position: relative;
+        width: 100%;
+        height: 100dvh;
+        padding:
+          env(safe-area-inset-top, 0px)
+          env(safe-area-inset-right, 0px)
+          env(safe-area-inset-bottom, 0px)
+          env(safe-area-inset-left, 0px);
       }
     </style>
   </head>
 
-  <body></body>
+  <body>
+    <img class="background" src="images/background.png" alt="" />
+    <main class="content"></main>
+  </body>
 </html>
